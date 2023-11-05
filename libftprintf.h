@@ -19,14 +19,9 @@
  
 
 int	ft_printf(const char *, ...);
-int	ft_isprint(int c);
-int	ft_isalpha(int c);
-int	ft_isdigit(int d);
-int	ft_isalnum(int c);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+int	ft_putchar(int c);
+int	ft_putstr(char *s);
+int	ft_putsigned(int n, const char c);
+int	ft_putunsigned(unsigned int n, const char c);
 
 #endif

@@ -1,9 +1,7 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c \
-	ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
-	ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-	ft_tolower.c ft_toupper.c
+SRC = ft_printf.c ft_putnbr_base.c ft_putchar.c \
+		ft_putstr.c 
 
 OBJ = $(SRC:.c=.o)
 
@@ -15,7 +13,7 @@ all: $(NAME)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(SRC)
+$(NAME): $(OBJ)
 	ar -rcs $@ $^
 
 clean:
