@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static const char	*def_base(const char c)
+static char	*def_base(const char c)
 {
-	const char	*base;
+	char	*base;
 
 	if (c == 'd' || c == 'i' || c == 'u')
-		*base = "0123456789";
-	else if (c == 'p' || c == 'x')
-		*base = "0123456789abcdef";
-	else (c == 'X')
-		*base = "0123456789ABCDEF";
+		base = "0123456789";
+	if (c == 'p' || c == 'x')
+		base = "0123456789abcdef";
+	if (c == 'X')
+		base = "0123456789ABCDEF";
 	return (base);
 }
 
@@ -38,7 +38,7 @@ static int	ft_strlen(const char *str)
 int	ft_putsigned(int n, const char c)
 {
 	long int	nbr;
-	const char	*base;
+	char		*base;
 	int			len_base;
 	int			len;
 
@@ -52,16 +52,16 @@ int	ft_putsigned(int n, const char c)
 		nbr = nbr * -1;
 	}
 	if (nbr >= len_base)
-		ft_putnbr(nbr / len_base, c);
+		ft_putsigned(nbr / len_base, c);
 	len += ft_putchar(base[nbr % len_base]);
 	return (len);
 }
 
 int	ft_putunsigned(unsigned int n, const char c)
 {
-	const char	*base;
-	int			len_base;
-	int			len;
+	char	*base;
+	int		len_base;
+	int		len;
 
 	base = def_base(c);
 	len_base = ft_strlen(base);
