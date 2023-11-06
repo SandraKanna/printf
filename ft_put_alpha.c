@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_put_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skanna <skanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 18:50:24 by skanna            #+#    #+#             */
-/*   Updated: 2023/10/26 19:15:50 by skanna           ###   ########.fr       */
+/*   Updated: 2023/11/06 15:58:14 by skanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ int	ft_putchar(int c)
 
 int	ft_putstr(char *s)
 {
-	int	len;
+	int		i;
 
-	len = 0;
+	i = 0;
 	if (!s)
-		return (NULL);
-	while (s[len])
-	{	
-		ft_putchar(s[len]);
-		len++;
+	{
+		write(1, "(null)", 6);
+		return (6);
 	}
-	return (len);
+	while (s[i])
+		write(1, &(s[i++]), 1);
+	return (i);
 }
