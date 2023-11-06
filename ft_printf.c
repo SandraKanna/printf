@@ -6,7 +6,7 @@
 /*   By: skanna <skanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:56:32 by skanna            #+#    #+#             */
-/*   Updated: 2023/11/06 18:39:27 by skanna           ###   ########.fr       */
+/*   Updated: 2023/11/06 19:06:50 by skanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	print_type(va_list arg, char specifier)
 	else if (specifier == 's')
 		len += ft_putstr(va_arg(arg, char *));
 	else if (specifier == 'u')
-	 	len += ft_putunsigned(va_arg(arg, unsigned int), specifier);
+		len += ft_putunsigned(va_arg(arg, unsigned int), specifier);
 	else if (specifier == 'd' || specifier == 'i')
 	 	len += ft_putsigned(va_arg(arg, int), specifier);
 	else if (specifier == 'x' || specifier == 'X')
@@ -49,9 +49,9 @@ int	ft_printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(arg, format);
-	while(format[i])
+	while (format[i])
 	{
-		if (format[i] == '%') //&& format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
 			len += print_type(arg, format[++i]);
 			i++;
