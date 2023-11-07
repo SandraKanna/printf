@@ -1,8 +1,12 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_putnbr_base.c ft_put_alpha.c 
+SRC = ft_print_bonus.c ft_printf.c ft_putnbr_base.c ft_put_alpha.c ft_print_p.c
 
 OBJ = $(SRC:.c=.o)
+
+#BONUS_SRC = ft_print_bonus.c
+
+#OBJ_BONUS = $(BONUS_SRC:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -14,6 +18,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rcs $@ $^
+
+#bonus: $(OBJ_BONUS) $(OBJ)
+#ar -rcs $(NAME) $^
 
 clean:
 	rm -f $(OBJ)

@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skanna <skanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 14:58:12 by skanna            #+#    #+#             */
-/*   Updated: 2023/11/07 12:45:47 by skanna           ###   ########.fr       */
+/*   Created: 2023/11/07 11:16:05 by skanna            #+#    #+#             */
+/*   Updated: 2023/11/07 11:21:10 by skanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+static int	ft_print_p2(unsigned long long n)
+{
+	char	*base;
+	int		len;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(int c);
-int	ft_putstr(char *s);
-int	ft_putsigned(int n, const char c);
-int	ft_putunsigned(unsigned int n, const char c);
-int	ft_print_p1(unsigned long long n);
-int	ft_print_bonus(int n);
+	base = "0123456789abcdef";
+	len = 0;
+	if (n >= 16)
+		len += ft_print_p2(n / 16);
+	len += (ft_putchar(base[n % 16]));
+	return (len);
+}
 
-#endif
+int	ft_print_p1(unsigned long long n)
+{
+	char	*hex;
+	int		len;
+
+	len = 0;
+	hex = "0x";
+	len += ft_putstr(hex);
+	len += ft_print_p2(n);
+	return (len);
+}

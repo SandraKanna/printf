@@ -6,13 +6,11 @@
 /*   By: skanna <skanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:56:32 by skanna            #+#    #+#             */
-/*   Updated: 2023/11/06 19:06:50 by skanna           ###   ########.fr       */
+/*   Updated: 2023/11/07 14:48:46 by skanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 static int	print_type(va_list arg, char specifier)
 {
@@ -31,8 +29,10 @@ static int	print_type(va_list arg, char specifier)
 	 	len += ft_putunsigned(va_arg(arg, unsigned int), specifier);
 	else if (specifier == 'p')
 		len += ft_print_p1(va_arg(arg, unsigned long long));
-	//bonus: if (c == '#' || c == '+' || c == '0')
-		//len += ft_print_bonus(va_arg(arg, int?));
+	// else if (specifier == '+')
+	// 	len += ft_print_bonus(va_arg(arg, int));
+	// else if (c == '#' || c == '0')
+	// 	len += ft_print_bonus(va_arg(arg, int?));
 	else
 		len += write(1, &specifier, 1);
 	return (len);
