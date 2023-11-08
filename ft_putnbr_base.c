@@ -6,7 +6,7 @@
 /*   By: skanna <skanna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:30:32 by skanna            #+#    #+#             */
-/*   Updated: 2023/11/07 11:20:00 by skanna           ###   ########.fr       */
+/*   Updated: 2023/11/08 15:27:28 by skanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static char	*def_base(const char c)
 {
 	char	*base;
 
+	base = 0;
 	if (c == 'd' || c == 'i' || c == 'u')
 		base = "0123456789";
 	else if (c == 'x')

@@ -8,7 +8,7 @@ OBJ = $(SRC:.c=.o)
 
 #OBJ_BONUS = $(BONUS_SRC:.c=.o)
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
