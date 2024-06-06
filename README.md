@@ -1,6 +1,6 @@
-# FT_PRINTF
-The goal of this project is to undrstand what a variadic function is so you can be able to reproduce some of the capabilities of the "printf" function from the standard C library.  
-A variadic function is a function that can take a variable types of arguments. Printf is a good example as it can take integers, chars, strings, pointer, etc and print the corresponding output.  
+# FT_PRINTF 42
+The goal of this project from 42 School is to understand what a variadic function is so you can be able to reproduce some of the capabilities of the "printf" function from the standard C library.  
+A variadic function is a function that can take variable types of arguments. Printf is a good example as it can take integers, chars, strings, pointer, etc as parameters and print the corresponding output.  
 
 ## Mandatory part
 Implement the following conversions:
